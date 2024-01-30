@@ -1,0 +1,225 @@
+/* Base */
+:root {
+  --font-family: "Roboto", sans-serif;
+  --content-width: 1110px;
+  --container-offset: 30px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --light-color: #fff;
+  --c-grey: #85859b;
+  --c-grey-dark: #4c5866;
+  --c-grey-middle: #666;
+  --c-blue: #7875fe;
+}
+
+/* stylelint-disable */
+/* stylelint-disable */
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/../fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.page {
+  height: 100%;
+  font-family: var(--font-family, sans-serif);
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-size: 16px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-container {
+  overflow: hidden;
+}
+
+.is-hidden {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  background-color: #fff;
+}
+.input-reset::-webkit-search-decoration, .input-reset::-webkit-search-cancel-button, .input-reset::-webkit-search-results-button, .input-reset::-webkit-search-results-decoration {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+/* Blocks */
+.header {
+  background-color: #43adff;
+}
+.header.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+.header__navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo a {
+  color: white;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+}
+.menu__item {
+  display: flex;
+  position: relative;
+}
+.menu__item-link {
+  color: white;
+  display: flex;
+  position: relative;
+  transition: 0.3s color;
+}
+@media (max-width: 1024px) {
+  .menu {
+    position: fixed;
+    background: var(--burger-color);
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+  }
+  .menu.active {
+    display: flex;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    pointer-events: all;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    animation: fade 0.1s linear;
+  }
+}
+
+.burger {
+  --time: 0.1s;
+  --width: 30px;
+  --height: 24px;
+  --line-height: 2px;
+  --spacing: 6px;
+  --color: #000;
+  --radius: 4px;
+  height: calc(var(--line-height) * 3 + var(--spacing) * 2);
+  width: var(--width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+.burger__line {
+  position: relative;
+  width: var(--width);
+  height: var(--line-height);
+  background-color: var(--color);
+  border-radius: var(--radius);
+}
+.burger__line::after, .burger__line::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  width: var(--width);
+  height: var(--line-height);
+  border-radius: var(--radius);
+  background-color: var(--color);
+  transition: transform var(--time) ease-in, top var(--time) linear var(--time);
+}
+.burger__line::before {
+  top: calc(-1 * (var(--line-height) + var(--spacing)));
+}
+.burger__line::after {
+  top: calc(var(--line-height) + var(--spacing));
+}
+.burger__line--active {
+  background-color: transparent;
+}
+.burger__line--active::after, .burger__line--active::before {
+  top: 0;
+  transition: top var(--time) linear, transform var(--time) ease-in var(--time);
+}
+.burger__line--active::before {
+  transform: rotate(45deg);
+}
+.burger__line--active::after {
+  transform: rotate(-45deg);
+}
+/*# sourceMappingURL=main.css.map */

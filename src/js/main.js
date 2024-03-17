@@ -1,3 +1,3 @@
-import { burgerMenu } from "./components/burger";
-// import "./libs";
-burgerMenu();
+import { search } from "./components/search";
+// burgerMenu();
+search();

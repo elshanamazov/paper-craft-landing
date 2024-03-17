@@ -1,143 +1,106 @@
-// ========================= [ Header styles ] =========================
 .header {
-  background-color: #43adff;
-
-  &.fixed {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-  }
+  padding: 22px 0;
+  border-bottom: 1px solid var(--c-grey-d);
 
   &__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    gap: 50px;
   }
-}
 
-.logo {
-  a {
-    color: white;
-  }
-}
-
-// ========================== [ Menu styles ] ==========================
-.menu {
-  display: flex;
-  gap: 30px;
-
-  // .menu__item
-  &__item {
+  &__top {
     display: flex;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
-  // .menu__item-link
-  &__item-link {
-    color: white;
+  &__actions {
     display: flex;
-    position: relative;
-    transition: 0.3s color;
-  }
+    align-items: center;
+    flex-shrink: 0;
 
-  // Mobile menu styles
-  @include tablet {
-    position: fixed;
-    background: var(--burger-color);
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    display: none;
+    .search-btn,
+    .login-btn {
+      width: 24px;
+      height: 24px;
+    }
 
-    &.active {
-      display: flex;
-      left: 0;
-      top: 0;
-      height: 100vh;
-      width: 100vw;
-      flex-direction: column;
-      pointer-events: all;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-      animation: fade 0.1s linear;
+    .login-btn {
+      margin-left: 25px;
     }
   }
 }
 
-.burger {
-  --time: 0.1s;
-
-  --width: 30px;
-  --height: 24px;
-
-  --line-height: 2px;
-  --spacing: 6px;
-
-  --color: #000;
-  --radius: 4px;
-
-  height: calc(var(--line-height) * 3 + var(--spacing) * 2);
-  width: var(--width);
-
+.nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
+  justify-content: flex-end;
 
-  &__line {
-    position: relative;
-    width: var(--width);
-    height: var(--line-height);
-    background-color: var(--color);
-    border-radius: var(--radius);
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
 
-    &::after,
-    &::before {
-      content: "";
-      display: block;
+  &__link {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--c-grey-dark);
+    transition: color 0.2s ease-in;
 
-      position: absolute;
-      left: 0;
-
-      width: var(--width);
-      height: var(--line-height);
-
-      border-radius: var(--radius);
-      background-color: var(--color);
-      transition: transform var(--time) ease-in,
-        top var(--time) linear var(--time);
+    &:hover {
+      color: var(--c-blue);
     }
 
-    &::before {
-      top: calc(-1 * (var(--line-height) + var(--spacing)));
-    }
-
-    &::after {
-      top: calc(var(--line-height) + var(--spacing));
-    }
-
-    &--active {
-      background-color: transparent;
-    }
-
-    &--active::after,
-    &--active::before {
-      top: 0;
-      transition: top var(--time) linear,
-        transform var(--time) ease-in var(--time);
-    }
-
-    &--active::before {
-      transform: rotate(45deg);
-    }
-
-    &--active::after {
-      transform: rotate(-45deg);
+    &:active {
+      color: var(--c-blue-darker);
     }
   }
 }
+
+// .menu {
+//   display: flex;
+//   gap: 30px;
+
+//   // .menu__item
+//   &__item {
+//     display: flex;
+//     position: relative;
+//   }
+
+//   // .menu__item-link
+//   &__item-link {
+//     color: rgb(22, 20, 20);
+//     display: flex;
+//     position: relative;
+//     transition: 0.3s color;
+//   }
+
+//   // Mobile menu styles
+//   @include tablet {
+//     position: fixed;
+//     background: var(--burger-color);
+//     left: 0;
+//     top: 0;
+//     height: 100vh;
+//     width: 100vw;
+//     display: none;
+
+//     &.active {
+//       display: flex;
+//       left: 0;
+//       top: 0;
+//       height: 100vh;
+//       width: 100vw;
+//       flex-direction: column;
+//       pointer-events: all;
+//       justify-content: center;
+//       align-items: center;
+//       z-index: 2;
+//       animation: fade 0.1s linear;
+//     }
+//   }
+// }

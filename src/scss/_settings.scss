@@ -83,3 +83,19 @@ a {
   height: 1px;
   clip: rect(0 0 0 0);
 }
+
+.icon-svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: var(--c-grey-dark);
+  transition: stroke 0.2s ease-in;
+
+  &:hover {
+    stroke: var(--c-blue);
+  }
+
+  &:active {
+    stroke: var(--c-blue-darker);
+  }
+}

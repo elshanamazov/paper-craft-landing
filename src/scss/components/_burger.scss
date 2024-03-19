@@ -1,22 +1,27 @@
 .burger {
-  --time: 0.1s;
+  --time: 0.2s;
 
-  --width: 30px;
-  --height: 24px;
+  --width: 24px;
+  --height: 21px;
 
   --line-height: 2px;
   --spacing: 6px;
 
-  --color: #000;
+  --color: #4c5866;
   --radius: 4px;
 
   height: calc(var(--line-height) * 3 + var(--spacing) * 2);
   width: var(--width);
 
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   z-index: 99;
+
+  @include mobile {
+    display: flex;
+    grid-area: burger;
+  }
 
   &__line {
     position: relative;
@@ -29,17 +34,13 @@
     &::before {
       content: "";
       display: block;
-
       position: absolute;
       left: 0;
-
       width: var(--width);
       height: var(--line-height);
-
       border-radius: var(--radius);
       background-color: var(--color);
-      transition: transform var(--time) ease-in,
-        top var(--time) linear var(--time);
+      transition: transform var(--time) ease-in-out, top var(--time) ease-in-out;
     }
 
     &::before {
@@ -49,24 +50,100 @@
     &::after {
       top: calc(var(--line-height) + var(--spacing));
     }
+  }
 
-    &--active {
-      background-color: transparent;
-    }
+  &--active .burger__line {
+    background-color: transparent;
 
-    &--active::after,
-    &--active::before {
+    &::after,
+    &::before {
       top: 0;
-      transition: top var(--time) linear,
-        transform var(--time) ease-in var(--time);
     }
 
-    &--active::before {
+    &::before {
       transform: rotate(45deg);
     }
 
-    &--active::after {
+    &::after {
       transform: rotate(-45deg);
     }
   }
 }
+
+// .burger {
+//   --time: 0.1s;
+
+//   --width: 24px;
+//   --height: 21px;
+
+//   --line-height: 2px;
+//   --spacing: 6px;
+
+//   --color: #4c5866;
+//   --radius: 4px;
+
+//   height: calc(var(--line-height) * 3 + var(--spacing) * 2);
+//   width: var(--width);
+
+//   display: none;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 99;
+
+//   @include mobile {
+//     display: flex;
+//     grid-area: burger;
+//   }
+
+//   &__line {
+//     position: relative;
+//     width: var(--width);
+//     height: var(--line-height);
+//     background-color: var(--color);
+//     border-radius: var(--radius);
+
+//     &::after,
+//     &::before {
+//       content: "";
+//       display: block;
+
+//       position: absolute;
+//       left: 0;
+
+//       width: var(--width);
+//       height: var(--line-height);
+
+//       border-radius: var(--radius);
+//       background-color: var(--color);
+//       transition: transform var(--time) ease-in,
+//         top var(--time) linear var(--time);
+//     }
+
+//     &::before {
+//       top: calc(-1 * (var(--line-height) + var(--spacing)));
+//     }
+
+//     &::after {
+//       top: calc(var(--line-height) + var(--spacing));
+//     }
+
+//     &--active {
+//       background-color: transparent;
+//     }
+
+//     &--active::after,
+//     &--active::before {
+//       top: 0;
+//       transition: top var(--time) linear,
+//         transform var(--time) ease-in var(--time);
+//     }
+
+//     &--active::before {
+//       transform: rotate(45deg);
+//     }
+
+//     &--active::after {
+//       transform: rotate(-45deg);
+//     }
+//   }
+// }

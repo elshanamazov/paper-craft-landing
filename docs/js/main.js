@@ -2,6 +2,43 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/components/burger.js":
+/*!*************************************!*\
+  !*** ./src/js/components/burger.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   burgerMenu: () => (/* binding */ burgerMenu)
+/* harmony export */ });
+function burgerMenu() {
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".nav");
+  const body = document.querySelector("body");
+  burger.addEventListener("click", () => {
+    if (!menu.classList.contains("active")) {
+      menu.classList.add("active");
+      burger.classList.add("burger--active");
+      body.classList.add("locked");
+    } else {
+      menu.classList.remove("active");
+      burger.classList.remove("burger--active");
+      body.classList.remove("locked");
+    }
+  });
+  // resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 991.98) {
+      menu.classList.remove("active");
+      burger.classList.remove("burger--active");
+      body.classList.remove("locked");
+    }
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/components/search.js":
 /*!*************************************!*\
   !*** ./src/js/components/search.js ***!
@@ -93,10 +130,12 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_search__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/search */ "./src/js/components/search.js");
+/* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/burger */ "./src/js/components/burger.js");
+/* harmony import */ var _components_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/search */ "./src/js/components/search.js");
 
-// burgerMenu();
-(0,_components_search__WEBPACK_IMPORTED_MODULE_0__.search)();
+
+(0,_components_burger__WEBPACK_IMPORTED_MODULE_0__.burgerMenu)();
+(0,_components_search__WEBPACK_IMPORTED_MODULE_1__.search)();
 })();
 
 /******/ })()

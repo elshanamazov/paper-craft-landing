@@ -2,24 +2,51 @@
   padding: 22px 0;
   border-bottom: 1px solid var(--c-grey-d);
 
+  @include tablet {
+    position: relative;
+    padding: 18px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid var(--c-grey-d);
+    }
+  }
+
   &__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 50px;
-  }
 
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    @include tablet {
+      display: grid;
+      grid-template-areas:
+        "logo actions"
+        "nav nav";
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+    }
+
+    @include mobile {
+      grid-template-areas:
+        "logo logo"
+        "burger actions";
+      gap: 42px;
+    }
   }
 
   &__actions {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    @include tablet {
+      grid-area: actions;
+    }
 
     .search-btn,
     .login-btn {
@@ -36,12 +63,52 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  flex-grow: 1;
+  @include tablet {
+    grid-area: nav;
+    padding-top: 18px;
+  }
+
+  @include mobile {
+    position: fixed;
+    background: var(--burger-color);
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+
+    &.active {
+      display: flex;
+      left: 0;
+      top: 60px;
+      background-color: var(--c-grey-divider);
+      height: 100vh;
+      width: 100vw;
+      padding: 75px 20px 20px;
+      flex-direction: column;
+      pointer-events: all;
+      justify-content: flex-start;
+      z-index: 2;
+      animation: fade 0.1s linear;
+
+      .nav__menu {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
 
   &__menu {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 60px;
+    @include tablet {
+      width: 100%;
+      justify-content: space-between;
+      gap: 40px;
+    }
   }
 
   &__link {
@@ -58,49 +125,18 @@
     &:active {
       color: var(--c-blue-darker);
     }
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 }
 
-// .menu {
-//   display: flex;
-//   gap: 30px;
-
-//   // .menu__item
-//   &__item {
-//     display: flex;
-//     position: relative;
-//   }
-
-//   // .menu__item-link
-//   &__item-link {
-//     color: rgb(22, 20, 20);
-//     display: flex;
-//     position: relative;
-//     transition: 0.3s color;
-//   }
-
-//   // Mobile menu styles
-//   @include tablet {
-//     position: fixed;
-//     background: var(--burger-color);
-//     left: 0;
-//     top: 0;
-//     height: 100vh;
-//     width: 100vw;
-//     display: none;
-
-//     &.active {
-//       display: flex;
-//       left: 0;
-//       top: 0;
-//       height: 100vh;
-//       width: 100vw;
-//       flex-direction: column;
-//       pointer-events: all;
-//       justify-content: center;
-//       align-items: center;
-//       z-index: 2;
-//       animation: fade 0.1s linear;
-//     }
-//   }
-// }
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

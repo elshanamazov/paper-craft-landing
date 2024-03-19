@@ -1,6 +1,15 @@
 .logo {
-  display: block;
+  display: flex;
   height: 22px;
   overflow: hidden;
   margin-right: 10px;
+
+  @include tablet {
+    grid-area: logo;
+    margin-right: 0;
+  }
+
+  @include mobile {
+    justify-content: center;
+  }
 }

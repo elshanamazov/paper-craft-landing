@@ -1,50 +1,75 @@
-// ========================= [ Header styles ] =========================
 .header {
-  background-color: #43adff;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--c-grey-d);
 
-  &.fixed {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 2;
+  @include tablet {
+    position: relative;
+    padding: 18px 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      border-bottom: 1px solid var(--c-grey-d);
+    }
   }
 
   &__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    gap: 50px;
+
+    @include tablet {
+      display: grid;
+      grid-template-areas:
+        "logo actions"
+        "nav nav";
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+    }
+
+    @include mobile {
+      grid-template-areas:
+        "logo logo"
+        "burger actions";
+      gap: 42px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    @include tablet {
+      grid-area: actions;
+    }
+
+    .search-btn,
+    .login-btn {
+      width: 24px;
+      height: 24px;
+    }
+
+    .login-btn {
+      margin-left: 25px;
+    }
   }
 }
 
-.logo {
-  a {
-    color: white;
-  }
-}
-
-// ========================== [ Menu styles ] ==========================
-.menu {
+.nav {
   display: flex;
-  gap: 30px;
-
-  // .menu__item
-  &__item {
-    display: flex;
-    position: relative;
-  }
-
-  // .menu__item-link
-  &__item-link {
-    color: white;
-    display: flex;
-    position: relative;
-    transition: 0.3s color;
-  }
-
-  // Mobile menu styles
+  justify-content: flex-end;
+  flex-grow: 1;
   @include tablet {
+    grid-area: nav;
+    padding-top: 18px;
+  }
+
+  @include mobile {
     position: fixed;
     background: var(--burger-color);
     left: 0;
@@ -56,88 +81,62 @@
     &.active {
       display: flex;
       left: 0;
-      top: 0;
+      top: 60px;
+      background-color: var(--c-grey-divider);
       height: 100vh;
       width: 100vw;
+      padding: 75px 20px 20px;
       flex-direction: column;
       pointer-events: all;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
       z-index: 2;
       animation: fade 0.1s linear;
+
+      .nav__menu {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    @include tablet {
+      width: 100%;
+      justify-content: space-between;
+      gap: 40px;
+    }
+  }
+
+  &__link {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--c-grey-dark);
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: var(--c-blue);
+    }
+
+    &:active {
+      color: var(--c-blue-darker);
+    }
+
+    @include mobile {
+      font-size: 18px;
     }
   }
 }
 
-.burger {
-  --time: 0.1s;
-
-  --width: 30px;
-  --height: 24px;
-
-  --line-height: 2px;
-  --spacing: 6px;
-
-  --color: #000;
-  --radius: 4px;
-
-  height: calc(var(--line-height) * 3 + var(--spacing) * 2);
-  width: var(--width);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 99;
-
-  &__line {
-    position: relative;
-    width: var(--width);
-    height: var(--line-height);
-    background-color: var(--color);
-    border-radius: var(--radius);
-
-    &::after,
-    &::before {
-      content: "";
-      display: block;
-
-      position: absolute;
-      left: 0;
-
-      width: var(--width);
-      height: var(--line-height);
-
-      border-radius: var(--radius);
-      background-color: var(--color);
-      transition: transform var(--time) ease-in,
-        top var(--time) linear var(--time);
-    }
-
-    &::before {
-      top: calc(-1 * (var(--line-height) + var(--spacing)));
-    }
-
-    &::after {
-      top: calc(var(--line-height) + var(--spacing));
-    }
-
-    &--active {
-      background-color: transparent;
-    }
-
-    &--active::after,
-    &--active::before {
-      top: 0;
-      transition: top var(--time) linear,
-        transform var(--time) ease-in var(--time);
-    }
-
-    &--active::before {
-      transform: rotate(45deg);
-    }
-
-    &--active::after {
-      transform: rotate(-45deg);
-    }
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

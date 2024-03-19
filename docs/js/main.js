@@ -13,17 +13,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   burgerMenu: () => (/* binding */ burgerMenu)
 /* harmony export */ });
 function burgerMenu() {
-  const burger = document.querySelector(".burger__line");
-  const menu = document.querySelector(".menu");
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".nav");
   const body = document.querySelector("body");
   burger.addEventListener("click", () => {
     if (!menu.classList.contains("active")) {
       menu.classList.add("active");
-      burger.classList.add("burger__line--active");
+      burger.classList.add("burger--active");
       body.classList.add("locked");
     } else {
       menu.classList.remove("active");
-      burger.classList.remove("burger__line--active");
+      burger.classList.remove("burger--active");
       body.classList.remove("locked");
     }
   });
@@ -31,9 +31,37 @@ function burgerMenu() {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 991.98) {
       menu.classList.remove("active");
-      burger.classList.remove("burger__line--active");
+      burger.classList.remove("burger--active");
       body.classList.remove("locked");
     }
+  });
+}
+
+/***/ }),
+
+/***/ "./src/js/components/search.js":
+/*!*************************************!*\
+  !*** ./src/js/components/search.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   search: () => (/* binding */ search)
+/* harmony export */ });
+function search() {
+  const searchIcon = document.querySelector(".search-btn");
+  const closeSearch = document.querySelector(".search-form__close");
+  const searchField = document.querySelector(".search-form");
+  searchIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    searchField.classList.add("search-form--open");
+    searchField.setAttribute("aria-expanded", "true");
+  });
+  closeSearch.addEventListener("click", function (e) {
+    e.preventDefault();
+    searchField.classList.remove("search-form--open");
+    searchField.setAttribute("aria-expanded", "false");
   });
 }
 
@@ -103,9 +131,11 @@ var __webpack_exports__ = {};
   \************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_burger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/burger */ "./src/js/components/burger.js");
+/* harmony import */ var _components_search__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/search */ "./src/js/components/search.js");
 
-// import "./libs";
+
 (0,_components_burger__WEBPACK_IMPORTED_MODULE_0__.burgerMenu)();
+(0,_components_search__WEBPACK_IMPORTED_MODULE_1__.search)();
 })();
 
 /******/ })()

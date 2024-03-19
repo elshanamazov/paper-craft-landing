@@ -1,3 +1,5 @@
 import { burgerMenu } from "./components/burger";
-// import "./libs";
+import { search } from "./components/search";
+
 burgerMenu();
+search();

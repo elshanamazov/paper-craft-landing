@@ -1,33 +1,52 @@
-<header>
-  <!-- Navbar -->
-  <div class="header">
-    <div class="container">
-      <div class="header__navbar">
-        <div class="logo">
-          <img loading="lazy" src="." class="logo__img" width="140" height="22" alt="logo">
-        </div>
+<header class="header">
+  <div class="container">
+    <div class="header__navbar">
 
-        <nav>
-          <ul class="menu">
-            <li class="menu__item">
-              <a href="#" class="menu__item-link" data-scroll>Products</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__item-link" data-scroll>Materials</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__item-link" data-scroll>About</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__item-link" data-scroll>Contacts</a>
-            </li>
-          </ul>
-        </nav>
+      <a class="logo">
+        <img loading="lazy" src="./img/logo.svg" class="logo__img" width="140" height="22" alt="logo">
+      </a>
 
-        <button class="burger btn-reset">
-          <span class="burger__line"></span>
+      <nav class="nav">
+        <ul class="nav__menu list-reset">
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-scroll>Products</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-scroll>Materials</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-scroll>About</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link" data-scroll>Contacts</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <div class="header__actions">
+        <button class="search-btn btn-reset" aria-label="Open search area">
+          <svg class="icon-svg">
+            <use xlink:href="img/sprite.svg#search"></use>
+          </svg>
+        </button>
+        <form class="search-form" aria-expanded="false">
+          <input type="text" placeholder="Search..." class="search-form__input input-reset" aria-label="Search area">
+          <button class="search-form__close btn-reset" aria-label="Close">
+            <svg class="icon-svg">
+              <use xlink:href="img/sprite.svg#escape"></use>
+            </svg>
+          </button>
+        </form>
+        <button class="login-btn btn-reset" aria-label="Login">
+          <svg class="icon-svg">
+            <use xlink:href="img/sprite.svg#log-in"></use>
+          </svg>
         </button>
       </div>
+
+      <button class="btn-reset burger" aria-label="Open menu" aria-expanded="false" data-burger>
+        <span class="burger__line"></span>
+      </button>
     </div>
-  </div>
 </header>

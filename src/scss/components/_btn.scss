@@ -1,0 +1,19 @@
+.btn {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(18px, 2.5vw, 20px);
+  display: inline-block;
+  border: 1px solid var(--c-blue);
+  padding: 22px 89px;
+  color: var(--c-blue);
+  transition: color 0.3s ease-in-out, background-color 0.3s;
+
+  &:hover {
+    color: var(--light-color);
+    background-color: var(--c-blue);
+  }
+
+  &:active {
+    background-color: var(--c-blue-darker);
+  }
+}

@@ -103,3 +103,20 @@ a {
     stroke: var(--c-blue-darker);
   }
 }
+
+.title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(38px, 5vw, 60px);
+  color: var(--c-grey-dark);
+  margin: 0;
+}
+
+.desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(18px, 2.5vw, 20px);
+  line-height: 1.5;
+  color: var(--c-grey);
+  margin: 0;
+}

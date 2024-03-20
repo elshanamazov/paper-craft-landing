@@ -131,6 +131,23 @@ a {
   stroke: var(--c-blue-darker);
 }
 
+.title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(38px, 5vw, 60px);
+  color: var(--c-grey-dark);
+  margin: 0;
+}
+
+.desc {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(18px, 2.5vw, 20px);
+  line-height: 1.5;
+  color: var(--c-grey);
+  margin: 0;
+}
+
 /* Blocks */
 .header {
   padding: 22px 0;
@@ -397,5 +414,57 @@ a {
 }
 .search-form__input:focus::placeholder {
   color: var(--c-grey-dark);
+}
+
+.hero {
+  padding-top: 60px;
+}
+@media (max-width: 1001px) {
+  .hero {
+    padding-top: 50px;
+  }
+}
+.hero__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(10px, 2vw, 5rem);
+}
+.hero__desc, .hero__title {
+  margin-bottom: 40px;
+}
+.hero__item {
+  font-size: 0;
+}
+.hero__item:first-child {
+  max-width: clamp(280px, 50vw, 425px);
+}
+@media (max-width: 510px) {
+  .hero__item:first-child {
+    max-width: 100%;
+  }
+}
+@media (max-width: 510px) {
+  .hero__picture {
+    display: none;
+  }
+}
+
+.btn {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(18px, 2.5vw, 20px);
+  display: inline-block;
+  border: 1px solid var(--c-blue);
+  padding: 22px 89px;
+  color: var(--c-blue);
+  transition: color 0.3s ease-in-out, background-color 0.3s;
+}
+.btn:hover {
+  color: var(--light-color);
+  background-color: var(--c-blue);
+}
+.btn:active {
+  background-color: var(--c-blue-darker);
 }
 /*# sourceMappingURL=main.css.map */

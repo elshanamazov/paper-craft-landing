@@ -1,0 +1,35 @@
+.hero {
+  padding-top: 60px;
+  @include tablet {
+    padding-top: 50px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(10px, 2vw, 5rem);
+  }
+
+  &__desc,
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    font-size: 0;
+  }
+
+  &__item:first-child {
+    max-width: clamp(280px, 50vw, 425px);
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__picture {
+    @include mobile {
+      display: none;
+    }
+  }
+}

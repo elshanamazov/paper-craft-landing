@@ -6,9 +6,9 @@
 
   &__row {
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
-    gap: clamp(10px, 2vw, 5rem);
+    gap: clamp(15px, 2vw, 5rem);
   }
 
   &__desc,
@@ -17,13 +17,21 @@
   }
 
   &__item {
+    max-width: clamp(270px, 50vw, 50%);
     font-size: 0;
   }
 
-  &__item:first-child {
+  &__content {
     max-width: clamp(280px, 50vw, 425px);
+    padding-bottom: 90px;
+
+    @include tablet {
+      padding-bottom: 60px;
+    }
+
     @include mobile {
       max-width: 100%;
+      padding-bottom: 40px;
     }
   }
 

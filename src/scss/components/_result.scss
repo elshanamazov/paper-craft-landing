@@ -1,0 +1,83 @@
+.result {
+  padding-top: 60px;
+  padding-bottom: 90px;
+  background-color: var(--c-grey-divider);
+
+  &__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    @include mobile {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    padding-top: 20px;
+    border-top: 1px solid var(--c-grey-light);
+    padding: 37px 0;
+    padding-left: 190px;
+    background-position: left center;
+    background-size: clamp(130px, 15vw, 160px) 118px;
+    background-repeat: no-repeat;
+
+    @include tablet {
+      padding-top: 138px;
+      padding-left: 0;
+      background-position: left 19px;
+    }
+
+    @include mobile {
+      padding: 47px 0;
+      padding-left: 150px;
+    }
+
+    &--v1 {
+      background-image: url("../img/result_card1.png");
+    }
+
+    &--v2 {
+      background-image: url("../img/result_card2.png");
+    }
+
+    &--v3 {
+      background-image: url("../img/result_card3.png");
+    }
+  }
+
+  &__caption {
+    display: block;
+    font-family: var(--font-family);
+    color: var(--c-grey-middle);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 5px;
+  }
+
+  &__row {
+    padding-top: 90px;
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    gap: 20px;
+    align-items: center;
+    @include tablet {
+      align-items: start;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__desc:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

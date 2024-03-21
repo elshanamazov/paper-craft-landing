@@ -563,4 +563,13 @@ a {
 .result__desc:not(:last-child) {
   margin-bottom: 20px;
 }
+
+.products {
+  padding: 60px 0;
+}
+.products__lists {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
 /*# sourceMappingURL=main.css.map */

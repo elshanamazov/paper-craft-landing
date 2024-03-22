@@ -1,8 +1,5 @@
 .hero {
   padding-top: 60px;
-  @include tablet {
-    padding-top: 50px;
-  }
 
   &__row {
     display: flex;

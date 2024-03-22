@@ -128,3 +128,10 @@ a {
     font-size: clamp(16px, 2.5vw, 18px);
   }
 }
+
+.p-90 {
+  padding: 90px 0;
+  @include tablet {
+    padding: 60px 0;
+  }
+}

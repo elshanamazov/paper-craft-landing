@@ -155,6 +155,15 @@ a {
   font-size: clamp(16px, 2.5vw, 18px);
 }
 
+.p-90 {
+  padding: 90px 0;
+}
+@media (max-width: 1001px) {
+  .p-90 {
+    padding: 60px 0;
+  }
+}
+
 /* Blocks */
 .header {
   padding: 22px 0;
@@ -426,11 +435,6 @@ a {
 .hero {
   padding-top: 60px;
 }
-@media (max-width: 1001px) {
-  .hero {
-    padding-top: 50px;
-  }
-}
 .hero__row {
   display: flex;
   align-items: end;
@@ -484,8 +488,6 @@ a {
 }
 
 .result {
-  padding-top: 60px;
-  padding-bottom: 90px;
   background-color: var(--c-grey-divider);
 }
 .result__top {
@@ -565,9 +567,6 @@ a {
   margin-bottom: 20px;
 }
 
-.products {
-  padding: 60px 0;
-}
 .products__lists {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -662,7 +661,6 @@ a {
 }
 
 .partners {
-  padding: 60px 0;
   background-color: var(--c-grey-divider);
 }
 .partners__list {

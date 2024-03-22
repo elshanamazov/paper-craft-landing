@@ -39,7 +39,6 @@
           </li>
         </ul>
       </nav>
-
       <div class="header__actions">
         <button class="search-btn btn-reset" aria-label="Open search area">
           <svg class="icon-svg">
@@ -60,7 +59,6 @@
           </svg>
         </button>
       </div>
-
       <button class="btn-reset burger" aria-label="Open menu" aria-expanded="false" data-burger>
         <span class="burger__line"></span>
       </button>
@@ -116,7 +114,7 @@
     </div>
     <div class="result__row">
       <div class="result__pic">
-        <img loading="lazy" src="../img/result-pic.png" class="image" width="730" height="564" alt="paper pic">
+        <img loading="lazy" src="./img/result-pic.png" class="image" width="730" height="564" alt="paper pic">
       </div>
       <div class="result__content">
         <h2 class="result__title title title--secondary">Maximum whiteness</h2>
@@ -136,88 +134,94 @@
     <ul class="products__lists list-reset">
       <li class="products__list">
         <div class="products__item">
-          <picture>
-            <source srcset="img/product-1-tablet.jpg" media="(max-width: 992px)">
-            <img src="img/product-1.jpg" class="products-item__image" alt="Package">
-          </picture>
-          <h3 class="product__title">Package</h3>
-          <span class="product__print">Circulation: from 50 pieces</span>
-          <p class="descr product__desc desc">
+          <div class="products__pic">
+            <picture class="products__picture">
+              <source srcset="img/package@1x.webp, img/package@2x.webp 2x" type="image/webp" />
+              <img class="products__img" src="img/package@2x.png" srcset="img/package@1x.png, img/package@2x.png 2x"
+                alt="Package" />
+            </picture>
+          </div>
+          <h3 class="products__title title title--second">Package</h3>
+          <span class="products__print">Circulation: from 50 pieces</span>
+          <p class="descr products__desc desc">
             Made of kraft paper or thick cardboard. Packages come in various shapes and colors, we will make
             molds to order.
           </p>
-          <a href="#" target="_blank" class="product-item__link">
+          <a href="#" target="_blank" class="products__link">
             More details
-            <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20.7071 8.20711C21.0976 7.81658 21.0976 7.18342 20.7071 6.79289L14.3431 0.428932C13.9526 0.0384078 13.3195 0.0384078 12.9289 0.428932C12.5384 0.819457 12.5384 1.45262 12.9289 1.84315L18.5858 7.5L12.9289 13.1569C12.5384 13.5474 12.5384 14.1805 12.9289 14.5711C13.3195 14.9616 13.9526 14.9616 14.3431 14.5711L20.7071 8.20711ZM0 8.5H20V6.5H0V8.5Z">
-              </path>
+            <svg class="products__svg">
+              <use xlink:href="img/sprite.svg#arrow"></use>
             </svg>
           </a>
         </div>
       </li>
       <li class="products__list">
         <div class="products__item">
-          <picture>
-            <source srcset="img/product-1-tablet.jpg" media="(max-width: 992px)">
-            <img src="img/product-1.jpg" class="products-item__image" alt="Bags">
-          </picture>
-          <h3 class="product__title">Bags</h3>
-          <span class="product__print">Circulation: from 200 pieces</span>
-          <p class="descr product__desc desc">
+          <div class="products__pic">
+            <picture class="products__picture">
+              <source srcset="img/Bags@1x.webp, img/Bags@2x.webp 2x" type="image/webp" />
+              <img class="products__img" src="img/Bags@2x.png" srcset="img/Bags@1x.png, img/Bags@2x.png 2x"
+                alt="Bags" />
+            </picture>
+          </div>
+          <h3 class="products__title title title--second">Bags</h3>
+          <span class="products__print">Circulation: from 200 pieces</span>
+          <p class="descr products__desc desc">
             With rectangular bottom. From 10 cm to 60 cm on height. Materials: cardboard,
             kraft paper. Various colors and design.
           </p>
-          <a href="#" target="_blank" class="product-item__link">
+          <a href="#" target="_blank" class="products__link">
             More details
-            <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20.7071 8.20711C21.0976 7.81658 21.0976 7.18342 20.7071 6.79289L14.3431 0.428932C13.9526 0.0384078 13.3195 0.0384078 12.9289 0.428932C12.5384 0.819457 12.5384 1.45262 12.9289 1.84315L18.5858 7.5L12.9289 13.1569C12.5384 13.5474 12.5384 14.1805 12.9289 14.5711C13.3195 14.9616 13.9526 14.9616 14.3431 14.5711L20.7071 8.20711ZM0 8.5H20V6.5H0V8.5Z">
-              </path>
+            <svg class="products__svg">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
             </svg>
           </a>
         </div>
       </li>
       <li class="products__list">
         <div class="products__item">
-          <picture>
-            <source srcset="img/product-1-tablet.jpg" media="(max-width: 992px)">
-            <img src="img/product-1.jpg" class="products-item__image" alt="Cases">
-          </picture>
-          <h3 class="product__title">Cases</h3>
-          <span class="product__print">Circulation: from 30 pieces</span>
-          <p class="descr product__desc desc">
+          <div class="products__pic">
+            <picture class="products__picture">
+              <source srcset="img/cases@1x.webp, img/cases@2x.webp 2x" type="image/webp" />
+              <img class="products__img" src="img/cases@2x.png" srcset="img/cases@1x.png, img/cases@2x.png 2x"
+                alt="Cases" />
+            </picture>
+          </div>
+          <h3 class="products__title title title--second">Cases</h3>
+          <span class="products__print">Circulation: from 30 pieces</span>
+          <p class="descr products__desc desc">
             Suitable for documents and other papers. Various colors, sizes and density. Material:
             pressed paper.
           </p>
-          <a href="#" target="_blank" class="product-item__link">
+          <a href="#" target="_blank" class="products__link">
             More details
-            <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20.7071 8.20711C21.0976 7.81658 21.0976 7.18342 20.7071 6.79289L14.3431 0.428932C13.9526 0.0384078 13.3195 0.0384078 12.9289 0.428932C12.5384 0.819457 12.5384 1.45262 12.9289 1.84315L18.5858 7.5L12.9289 13.1569C12.5384 13.5474 12.5384 14.1805 12.9289 14.5711C13.3195 14.9616 13.9526 14.9616 14.3431 14.5711L20.7071 8.20711ZM0 8.5H20V6.5H0V8.5Z">
-              </path>
+            <svg class="products__svg">
+              <use xlink:href="img/sprite.svg#arrow"></use>
+            </svg>
             </svg>
           </a>
         </div>
       </li>
       <li class="products__list">
         <div class="products__item">
-          <picture>
-            <source srcset="img/product-1-tablet.jpg" media="(max-width: 992px)">
-            <img src="img/product-1.jpg" class="products-item__image" alt="other products">
-          </picture>
-          <h3 class="product__title">other products</h3>
-          <span class="product__print">Circulation: from 100 pieces</span>
-          <p class="descr product__desc desc">
+          <div class="products__pic">
+            <picture class="products__picture">
+              <source srcset="img/other@1x.webp, img/other@2x.webp 2x" type="image/webp" />
+              <img class="products__img" src="img/other@2x.png" srcset="img/other@1x.png, img/other@2x.png 2x"
+                alt="Other products" />
+            </picture>
+          </div>
+          <h3 class="products__title title title--second">Other products</h3>
+          <span class="products__print">Circulation: from 100 pieces</span>
+          <p class="descr products__desc desc">
             Non-standard packaging, cases and other products of various sizes and configurations. Make it
             in as soon as possible.
           </p>
-          <a href="#" target="_blank" class="product-item__link">
+          <a href="#" target="_blank" class="products__link">
             More details
-            <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M20.7071 8.20711C21.0976 7.81658 21.0976 7.18342 20.7071 6.79289L14.3431 0.428932C13.9526 0.0384078 13.3195 0.0384078 12.9289 0.428932C12.5384 0.819457 12.5384 1.45262 12.9289 1.84315L18.5858 7.5L12.9289 13.1569C12.5384 13.5474 12.5384 14.1805 12.9289 14.5711C13.3195 14.9616 13.9526 14.9616 14.3431 14.5711L20.7071 8.20711ZM0 8.5H20V6.5H0V8.5Z">
-              </path>
+            <svg class="products__svg">
+              <use xlink:href="img/sprite.svg#arrow"></use>
             </svg>
           </a>
         </div>

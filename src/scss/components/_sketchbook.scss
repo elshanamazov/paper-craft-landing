@@ -1,2 +1,58 @@
 .sketchbook {
+  padding-bottom: 0;
+
+  @include tablet {
+    padding-bottom: 60px;
+  }
+  &__wrap {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: clamp(45px, 5vw, 65px);
+    @include tablet {
+      align-items: flex-start;
+    }
+
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 5px;
+    }
+  }
+
+  &__content {
+    padding-bottom: 90px;
+    @include tablet {
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    max-width: 350px;
+    margin-bottom: 30px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+
+  &__pic {
+    width: clamp(449px, 50vw, 730px);
+    height: auto;
+    font-size: 0;
+    margin-bottom: -150px;
+
+    @include tablet {
+      width: clamp(290px, 90vw, 450px);
+      margin-right: -80px;
+    }
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
 }
